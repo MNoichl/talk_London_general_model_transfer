@@ -1,0 +1,307 @@
+/*-- scss:defaults --*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300..700;1,300..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+
+// fonts
+$font-family-sans-serif: "Newsreader", Georgia, "Book Antiqua", serif !default;
+
+
+// colors
+$body-bg: #f0eadf !default;   // cream, as the paper of the cyanotype prints
+$body-color: #111 !default;
+$link-color: #8e1b14 !default;
+$selection-bg: #8e1b14 !default;
+$myaccent: #8e1b14;     // oxblood
+
+// headings
+$presentation-heading-font: "Newsreader", Georgia, "Book Antiqua", serif !default;
+$presentation-heading-color: #111 !default;
+$small-caps-font: "Jost", sans-serif !default;
+
+
+
+
+/*-- scss:rules --*/
+
+
+
+.smallcaps { 
+    font-family: $small-caps-font !important;
+
+  }
+
+  .highlight { 
+    color: $myaccent !important;
+
+  }
+
+
+
+
+.reveal a {
+    line-height: 1.3em;
+}
+
+// Itemize and Enumerate Styles
+// Asterisk bullets with a true hanging indent: wrapped lines align with the text, not the bullet.
+.reveal ul {
+    list-style-type: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.reveal ul li {
+    position: relative;
+    padding-left: 1em;
+    text-indent: 0;
+}
+
+.reveal .slides section ul li + li {
+    margin-top: 0.9em !important;   // Quarto sets a fixed 16px otherwise
+}
+
+.reveal ul li::before {
+    content: "*" !important; // Asterisk as bullet
+    position: absolute;
+    left: 0.05em;
+    top: 0.12em;
+    color: $myaccent !important;
+    font-family: Jost, sans-serif !important;
+    font-weight: 600;
+    font-size: 1.05em;   // the star's hub (where its five arms meet) sits on the middle of the capitals
+    line-height: 1 !important;
+}
+
+// Nested bullets: an oxblood ↳ arrow instead of the star.
+// The arrow is an SVG used as a CSS mask, so its shape does not depend on any font.
+// Its horizontal stroke sits on the middle of the capitals, as the stars do.
+.reveal ul ul {
+    margin-top: 0.9em !important;
+}
+.reveal ul ul li {
+    padding-left: 1.05em;
+}
+.reveal ul ul li::before {
+    content: "" !important;
+    font-size: 1em;
+    left: 0.02em;
+    top: 0.1em;
+    width: 0.72em;
+    height: 0.72em;
+    background-color: $myaccent;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='2.2' stroke-linejoin='miter'%3E%3Cpath d='M2.2 0.5v9.5h11.3'/%3E%3Cpath d='M10 6.5l3.5 3.5-3.5 3.5'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='2.2' stroke-linejoin='miter'%3E%3Cpath d='M2.2 0.5v9.5h11.3'/%3E%3Cpath d='M10 6.5l3.5 3.5-3.5 3.5'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+// Titles and Headings
+.reveal h1,
+.reveal h2 {
+    font-family: $presentation-heading-font, serif !important;
+    // letter-spacing: 0.15em !important;
+    // text-transform: uppercase !important;
+    font-weight: 500;
+    margin-bottom: 4%;
+    // margin-top: 8%;
+}
+// Quarto enlarges headings on 'smaller' slides (the literature list); keep them uniform
+.reveal .slides section.smaller h1,
+.reveal .slides section.smaller h2 {
+    font-size: 64px !important;
+}
+
+// .reveal h3,
+// .reveal h4,
+// .reveal h5,
+// .reveal h6 
+
+//   Citation formatting
+span.citation, span.citation *  {
+    font-family: "Jost", sans-serif !important;
+    font-size: 16pt;
+    color: #555;
+    line-height: .2 !important; // Adjust line-height for better alignment
+
+}
+
+
+
+// Asides (`::: aside`). Every slide here is a centred '#' slide, and a centred slide is only as
+// tall as its content, so Quarto's "pin to the bottom" rule lands the aside on top of the last
+// bullet. Let it follow the content instead, as Quarto does for centred decks.
+.reveal .slides section.center aside:not(.notes),
+.reveal .slides section.center div.aside {
+    position: static;
+    display: block;
+    margin-top: 1.6em;
+    line-height: 1.3;
+}
+
+.center-align * {
+    text-align: center;
+}
+
+// .imageheading {
+//     margin-bottom: -30px;
+// }
+
+
+
+.reveal .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $body-bg;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.reveal .remove_background {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+.reveal .image-container p {
+  margin: 0;
+  display: inline-block;
+}
+
+.reveal .image-container img,
+.reveal .image-container .remove_background {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+/* ---------------------------------------------------------------------------
+   Cyanotype part dividers (progressive zoom into the map)
+   Fixed 1400 x 1000 stage; the image's width sets the zoom, left/top the crop.
+   --------------------------------------------------------------------------- */
+$cyan: #183a68;
+$vermilion: #ef6a4a;
+$chalk: #f3f1ea;
+
+.reveal .slides > section.cyan-part {
+  padding: 0 !important;
+  top: 0 !important;
+  height: 1000px;
+}
+
+.reveal .cyan-stage {
+  position: absolute;
+  left: 0; top: 0;
+  width: 1400px; height: 1000px;
+  overflow: visible;
+  text-align: center;
+
+  .ground { position: absolute; left: -600px; top: -600px; width: 2600px; height: 2200px; background: $cyan; }
+  img {
+    position: absolute; display: block; margin: 0;
+    max-width: none !important; max-height: none !important;
+    // feather the edges so the print's uneven exposure never shows a seam against the flat blue
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent), linear-gradient(to bottom, transparent, #000 4%, #000 96%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent), linear-gradient(to bottom, transparent, #000 4%, #000 96%, transparent);
+    mask-composite: intersect;
+  }
+  .kicker, .part-title {
+    position: absolute; left: 0; right: 0; margin: 0;
+    text-shadow: 0 0 5px $cyan, 0 0 12px $cyan, 0 0 22px $cyan, 0 0 34px rgba(24, 58, 104, .8);
+  }
+  .kicker {
+    top: 412px;
+    font-family: "Jost", sans-serif; font-weight: 500;
+    font-size: 20px; letter-spacing: .24em; text-transform: uppercase;
+    color: $vermilion;
+  }
+  .part-title {
+    top: 452px;
+    font-family: "Newsreader", Georgia, serif; font-style: italic; font-weight: 400;
+    font-size: 88px; line-height: 1.06;
+    color: $chalk;
+  }
+}
+
+
+/* Lead-in labels on figure slides ("Model templates —") */
+.reveal .leadin {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 0.72em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-right: 0.2em;
+}
+
+
+/* Title slide: the whole cyanotype map, title on the blue to its left.
+   Breaks are set by hand so every line after the first is a whole phrase and the
+   block is nearly even (441 / 481 / 494 / 490 px at 66px). The kicker is kept
+   clearly narrower than the block; the vermilion rule is the byline's own top
+   border, so it always matches the name's width and sits close above it.
+   $t-left is the text edge shared by the title, plan and closing slides. */
+$t-left: 40px;
+.reveal .cyan-stage.title-stage {
+  text-align: left;
+  .t-kicker, .t-title, .t-by { position: absolute; left: $t-left; margin: 0; }
+  .t-kicker {
+    top: 280px;
+    font-family: "Jost", sans-serif; font-weight: 500;
+    font-size: 17px; letter-spacing: .22em; text-transform: uppercase;
+    color: $vermilion;
+  }
+  .t-title {
+    top: 322px; left: $t-left - 3px;   // optical: the U's serif overhangs
+    font-family: "Newsreader", Georgia, serif !important; font-weight: 400;
+    font-size: 66px; line-height: 1.06; letter-spacing: -0.005em;
+    white-space: nowrap;
+    color: $chalk; text-transform: none;
+  }
+  .t-by {
+    top: 648px;
+    display: inline-block;
+    padding-top: 13px;
+    border-top: 2px solid $vermilion;
+    font-family: "Newsreader", Georgia, serif; font-style: italic;
+    font-size: 31px; line-height: 1.2;
+    color: $chalk;
+  }
+}
+
+/* Closing slide: same composition as the title, so the talk ends where it began */
+.reveal .cyan-stage.title-stage .t-title.thanks {
+  font-style: italic;
+  font-size: 92px;
+}
+
+/* The plan: a contents slide on the title's view of the map.
+   Numerals are right-aligned in their own column (I, II, III, IV differ in width)
+   and centred on the cap height of the titles beside them. */
+.reveal .cyan-stage.plan-stage .t-kicker { font-size: 20px; }
+.reveal .cyan-stage.plan-stage .plan-list {
+  position: absolute; left: $t-left - 88px; top: 330px; width: 860px;   // titles start at $t-left like the title slide; numerals hang in the margin
+  margin: 0; padding: 0; list-style: none;
+  li {
+    display: grid; grid-template-columns: 62px 1fr; column-gap: 26px; align-items: baseline;
+    margin: 0 0 20px; padding: 0;
+  }
+  li::before { content: none !important; }
+  .num {
+    text-align: right;
+    font-family: "Jost", sans-serif; font-weight: 500;
+    font-size: 26px; letter-spacing: .1em; margin-right: -.1em;
+    color: $vermilion;
+    transform: translateY(-5.5px);   // measured: centres the numerals on the titles' cap height
+  }
+  .txt {
+    font-family: "Newsreader", Georgia, serif; font-style: italic; font-weight: 400;
+    font-size: 44px; line-height: 1.12; white-space: nowrap;
+    color: $chalk;
+  }
+}

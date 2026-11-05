@@ -1,0 +1,436 @@
+---
+format: 
+    revealjs:
+        title-slide: false
+        pagetitle: "Uncovering the general structure of model transfer between sciences"
+        theme: [default, custom.scss]
+        navigation-mode: vertical
+        include-in-header:  
+            text: |
+                <style>
+                .center-xy {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                
+
+                width: auto; /* Maintain aspect ratio */
+                height: auto; /* Maintain aspect ratio */
+                box-sizing: border-box; /* Include padding/border in size */
+                max-height: none;
+                }
+                </style>
+        auto-stretch: false
+        incremental: true 
+        
+bibliography: CompTemp.bib
+# csl: the-journal-of-modern-history.csl
+cite-method: citeproc
+dependencies:
+    - "custom.scss"
+controls: true
+width: 1400 # 1060
+height: 1000 # 700
+margin: 0.15 # 1
+min-scale: 0.2
+max-scale: 1.6
+
+# background-image: "images/background_egg.png"
+#quarto preview /Users/Noich001/Desktop/network_epistemology_playground/talk_BOCHUM/Data_and_ABMs.qmd
+---
+# {.cyan-part background-color="#183a68"}
+
+```{=html}
+<div class="cyan-stage title-stage">
+  <div class="ground"></div>
+  <img src="static_images/cyan_full.jpg" style="width:1250px;left:520px;top:0px">
+  <div class="t-kicker">HAI101 · LSE · 6 November 2026</div>
+  <h1 class="t-title">Uncovering the<br>general structure<br>of model transfer<br>between sciences</h1>
+  <div class="t-by">Max Noichl</div>
+</div>
+```
+
+
+# Introduction
+
+* Doctoral candidate at Utrecht University in theoretical philosophy.
+* Data-driven philosophy, philosophy with AI, complex collective cognition, philosophy of science.
+* To follow along: [**maxnoichl.eu/talk**](https://maxnoichl.eu/talk)
+* Today: *Uncovering the general structure of model transfer between sciences*
+
+
+
+# {.cyan-part background-color="#183a68"}
+
+```{=html}
+<div class="cyan-stage title-stage plan-stage">
+  <div class="ground"></div>
+  <img src="static_images/cyan_full.jpg" style="width:1250px;left:520px;top:0px">
+  <div class="t-kicker" style="top:282px">The plan</div>
+  <ol class="plan-list">
+    <li class="fragment"><span class="num">I</span><span class="txt">Model transfer</span></li>
+    <li class="fragment"><span class="num">II</span><span class="txt">Interlude: OA Atlas</span></li>
+    <li class="fragment"><span class="num">III</span><span class="txt">Applications</span></li>
+    <li class="fragment"><span class="num">IV</span><span class="txt">Generalizing the approach</span></li>
+    <li class="fragment"><span class="num">V</span><span class="txt">The structure of model transfer</span></li>
+  </ol>
+</div>
+```
+
+
+
+# {.cyan-part background-color="#183a68"}
+
+```{=html}
+<div class="cyan-stage">
+  <div class="ground"></div>
+  <img src="static_images/cyan_full.jpg" style="width:1450px;left:-213px;top:-355px">
+  <div class="kicker">Part I</div>
+  <div class="part-title">Model transfer</div>
+</div>
+```
+
+<!-- Part I content -->
+
+# Model transfer
+
+* A model gets developed for one domain, and becomes applicable to very different others.
+* Some examples: *Lotka–Volterra Model*, *Kuramoto Model*, *Hopfield Model*, *NK-Model*
+* Real transfer, convergence, adaptation?
+* Philosophically interesting:
+  * Scientific Creativity (and: predicting science)
+  * (Computational) Reorganization of Science?
+  * Pragmatism or metaphysics?
+
+::: aside
+@humphreysExtendingOurselvesComputational2004 @knuuttilaModelTemplatesTransdisciplinary2023
+:::
+
+# {.cyan-part background-color="#183a68"}
+
+```{=html}
+<div class="cyan-stage">
+  <div class="ground"></div>
+  <img src="static_images/cyan_full.jpg" style="width:1800px;left:-434px;top:-562px">
+  <div class="kicker">Part II · Interlude</div>
+  <div class="part-title">OA Atlas</div>
+</div>
+```
+
+
+
+# {background-iframe="https://huggingface.co/spaces/MaxNoichl/oa-atlas/embed" background-interactive="true"}
+
+::: {.absolute top=-520 left=560 width="800" height="300" style="font-size: 0.75em; overflow-wrap: anywhere; text-align: right;"}
+<a href="https://huggingface.co/spaces/MaxNoichl/oa-atlas">https://huggingface.co/spaces/MaxNoichl/oa-atlas</a> 
+:::
+
+## {background-iframe="https://maxnoichl-openalex-mapper.hf.space" background-interactive="true"}
+
+::: {.absolute top=-520 left=560 width="800" height="300" style="font-size: 0.75em; overflow-wrap: anywhere; text-align: right;"}
+<a href="https://maxnoichl-openalex-mapper.hf.space">https://maxnoichl-openalex-mapper.hf.space</a> 
+:::
+
+## {background-iframe="https://possible-life-project-openalex-mapper-strong-gpu.hf.space" background-interactive="true"}
+
+::: {.absolute top=10 left=560 width="800" height="300" style="font-size: 0.75em; overflow-wrap: anywhere; text-align: right;"}
+<a href="https://possible-life-project-openalex-mapper-strong-gpu.hf.space">https://possible-life-project-openalex-mapper-strong-gpu.hf.space</a> 
+:::
+
+
+#
+
+::: {.image-container}
+![](images/basemap_cropped.png){.remove_background width="60%"}
+:::
+[OA Atlas —]{.leadin} The workflow. <br>
+@singhSciRepEvalMultiFormatBenchmark2023 @mcinnesUMAPUniformManifold2018  @debruinPyAlex2023
+
+
+
+
+# Now, why is this useful for PhilSci? 
+* Philosophers need to be acquainted with science:
+  * Training, interviews, case studies, etc.
+* Problem: generalization, validation?
+* Answers questions of the form: "The Hopfield Model – where is it (really) a thing?"
+<!-- Switched order? -->
+
+
+# {.cyan-part background-color="#183a68"}
+
+```{=html}
+<div class="cyan-stage">
+  <div class="ground"></div>
+  <img src="static_images/cyan_full.jpg" style="width:2220px;left:-699px;top:-810px">
+  <div class="kicker">Part III</div>
+  <div class="part-title">Applications</div>
+</div>
+```
+
+
+
+# 
+
+::: {.image-container}
+![](images/hopfield_sherrington_ising_distribution_base_plot.png){.remove_background width="60%"}
+:::
+
+[Model templates —]{.leadin} Debates about model transfer in science, model templates as a structuring principle orthogonal to disciplines. <br>
+@humphreysExtendingOurselvesComputational2004 @knuuttilaModelTemplatesTransdisciplinary2023
+
+
+<!-- # 
+
+::: {.image-container}
+![](images/kuramoto_publication_year_distribution_talk_network.png){.remove_background width="75%"}
+:::
+
+[Model templates —]{.leadin} Distribution of the Kuramoto model across disciplines. <br>
+@knuuttilaModelTemplatesTransdisciplinary2023
+[Knuttila, Loettgers & Noichl under review]{style="font-family: 'Roboto Condensed'"} -->
+
+
+
+#
+::: {.image-container}
+![](images/emergence_phase_transition_distribution_base_plot.png){.remove_background width="60%"}
+:::
+[Concepts —]{.leadin} Distribution of concepts over large, interdisciplinary samples. <br>
+@malaterreRecipesPhilosophyScience2020 @zichertTracingDevelopmentVirtual2024
+
+::: {.notes}
+Talk only about emergence?
+:::
+
+## {background-iframe="images/evolution_umap_with_claude_labels_darwinian_terms.html" background-interactive="true"}
+
+
+# 
+::: {.image-container}
+![](images/random_forest_logistic_regression_distribution_base_plot.png){.remove_background width="60%"}
+:::
+
+[Methods —]{.leadin} Relevant for debates on machine learning in science vs. class. statistics, theory-free science. <br>@breimanStatisticalModelingTwo2001 @bzdokStatisticsMachineLearning2018 @andrewsDevilDataMachine
+
+# 
+::: {.image-container}
+![](graphics/computational_substrate_language_small_multiples.png){.remove_background width="85%"}
+:::
+
+[Computational substrates —]{.leadin} Distribution of programming and statistical languages across scientific fields. <br>
+
+# 
+::: {.image-container}
+![](images/hps_attention_v2.png){.remove_background width="60%"}
+:::
+
+[Attention of HPS —]{.leadin} 500k sources of the history and philosophy of science literature. <br>
+@weingartFindingHistoryPhilosophy2015
+
+##
+<div style="font-size: 0.8em;">
+| Journal | Number of Papers |
+|:-------|----------------:|
+| Isis | 22858 |
+| Technology and Culture | 13140 |
+| Journal of Philosophy | 12806 |
+| Synthese | 10484 |
+| Philosophy of Science | 7432 |
+| British Journal for the History of Science | 5810 |
+| British Journal for the Philosophy of Science | 4380 |
+| Journal for the History of Astronomy | 3194 |
+| Studies in History and Philosophy of Science | 2798 |
+| Annals of Science | 2742 |
+| Social Studies of Science | 2176 |
+| History of Science | 1511 |
+| Studies in History and Philosophy of Modern Physics | 1227 |
+| Archive for History of Exact Sciences | 1088 |
+| Osiris | 960 |
+| History and Philosophy of the Life Sciences | 914 |
+| Historical Studies in the Natural Sciences | 602 |
+</div>
+
+
+# {.cyan-part background-color="#183a68"}
+
+```{=html}
+<div class="cyan-stage">
+  <div class="ground"></div>
+  <img src="static_images/cyan_full.jpg" style="width:2750px;left:-1033px;top:-1123px">
+  <div class="kicker" style="top:372px">Part IV</div>
+  <div class="part-title" style="top:404px">Generalizing<br>the approach</div>
+</div>
+```
+
+<!-- Part IV content -->
+
+
+
+# Identifying Models
+
+* Search on OpenAlex for model, equation, process, map, automaton.
+* Retrieve 1M records.
+* Use gpt-6.1 Sol to filter raw strings: "SIR model" vs. "mouse model"
+* Arrange by shortest path on substring similarity, merge in batches & filter.
+* 3,380 candidate models. Search canonical names on OA.
+* Keep 1,338 models with more than 1,000 mentions.
+
+<!-- Data summary
+1. Catalogue: which models
+
+Model names were extracted from OpenAlex titles and abstracts, then cleaned and grouped by Codex in batches. Recurring problems were names mistaken for verbs, truncated phrases and capitalised ordinary words; these are logged in procedure_notes.md.
+Result: 3,380 candidate model groups, each with a first-pass OpenAlex population (count of matching papers).
+1,338 models with a population of at least 1,000 papers were kept.
+2. Query research: how we searched
+
+For each model, one Codex run (GPT-6.1, medium reasoning effort, live web search) wrote a retrieval plan for OpenAlex. Each plan was then validated against OpenAlex.
+1,741 Codex runs for 1,338 models:
+1,089 models needed one run;
+122 needed two, 100 needed three, 27 needed four;
+381 runs failed, mostly offline or connection failures overnight and on the train, and were rerun.
+A plan combines text routes (exact phrases in title/abstract, sometimes full text) with citation routes (papers citing canonical sources, such as the Berkson papers for logistic regression).
+In total: 10,543 text routes and 1,334 citation routes. A median of 9 routes per model (5–11).
+Each plan logs what was included and what was deliberately left out. For example, for logistic regression the bare "logit" and "LR" were left out as too ambiguous.
+3. Retrieval population: how big each model's literature is (union of all routes)
+
+Top: artificial neural network 3.33M, linear regression 2.65M, logistic regression 2.18M, deep neural network 2.00M, linear model 1.84M.
+Bottom: dot system 271, Godunov–Peshkov–Romenski 358, Maxwell–Boltzmann equation 626, Watson–Crick automaton 955, Yang–Baxter map 1,205.
+Median: 24,358 papers. 203 models have more than 100k.
+Five models fall below the 1,000 cutoff here because the final, researched queries are narrower than the first-pass count.
+4. Download: the sample
+
+Up to 5,000 papers per model, a seeded random sample of each model's union. 60 models have fewer, because their whole population is smaller.
+5,630,427 unique papers, 6,587,911 model memberships. About 15% of memberships point to a paper shared with another model.
+Each paper has title, abstract, year, date, field, citation count and reference list.
+1,251,943 papers have a title only, no abstract. 1,992 have no text at all and are excluded from embedding.
+OpenAlex cost: the balance went from $53.77 to $15.23 between 02:20 and 07:44 (about $38.5). The earlier partial download isn't in that log.
+5. Embedding and projection
+
+Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dimensions, stored as float16.
+5,628,435 papers in 2,749 shards. The endpoint run does about 26 shards/min,  -->
+
+
+# Researching Models
+* gpt-6.1 Sol with web access on high reasoning researches OA queries and checks them against common problems.
+* Download max 5k random records per model, total 5.63M papers.
+* Embed and project (qwen-embed-0.6)
+
+
+<!-- Examples::: -->
+# 
+::: {.image-container}
+![](images/kaplan_meier_survival_based_prediction_model.png){.remove_background width="75%"}
+:::
+
+[Kaplan–Meier survival model —]{.leadin} Up to 5,000 papers per model, placed on the map of all 5.63M. Concentrated in medicine and oncology.
+
+# 
+::: {.image-container}
+![](images/language_model.png){.remove_background width="75%"}
+:::
+
+[Language model —]{.leadin} Centred on computer science and AI, reaching into the social sciences and medicine.
+
+# 
+::: {.image-container}
+![](images/principal_component_analysis.png){.remove_background width="75%"}
+:::
+
+[Principal component analysis —]{.leadin} Spread across almost the whole map.
+
+
+<!-- Citations -->
+
+# 
+::: {.image-container}
+![](images/k_nearest_neighbors_model__citations.png){.remove_background width="75%"}
+:::
+
+[k-nearest neighbors —]{.leadin} Citations between the papers that use the model.
+
+
+<!-- Main path analysis SPLC Search path link count -->
+
+# 
+::: {.image-container}
+![](images/k_nearest_neighbors_model__splc.png){.remove_background width="75%"}
+:::
+
+[k-nearest neighbors —]{.leadin} The 100 links with the highest search path link count (SPLC): the backbone of main path analysis. <br>
+@hummonConnectivityCitationNetwork1989 @batageljEfficientAlgorithmsCitation2003 @liuIntegratedApproachMain2012 @liuFewNotesMain2019
+
+
+<!-- # aggregate by cluster.-->
+
+# 
+::: {.image-container}
+![](images/k_nearest_neighbors_model__regions.png){.remove_background width="75%"}
+:::
+
+[k-nearest neighbors —]{.leadin} SPLC summed between regions of the map: 65% of it stays within a region.
+
+
+# {.cyan-part background-color="#183a68"}
+
+```{=html}
+<div class="cyan-stage">
+  <div class="ground"></div>
+  <img src="static_images/cyan_full.jpg" style="width:3400px;left:-1442px;top:-1506px">
+  <div class="kicker" style="top:372px">Part V</div>
+  <div class="part-title" style="top:404px">The structure of<br>model transfer</div>
+</div>
+```
+
+<!-- Part V content -->
+
+
+
+<!-- umap of models -->
+
+# {background-iframe="images/model_umap_site/model_umap.html" background-interactive="true"}
+
+
+
+
+
+# Some qualifications
+* OpenAlex is not perfect
+* Our method right now only considers English
+* We're limited to sources that include abstracts or descriptive titles
+* Various UMAP issues.
+
+
+
+<!--
+# The proper role of comp. methods in PhilSci
+* Involved quantitative methods ground qualitative investigation.
+* Acquaintance, not necessarily hypothesis testing.
+* Working paper: [Patterns, Pathways & Surprises: Introducing OA Atlas](main.pdf)
+-->
+
+
+
+# {.cyan-part background-color="#183a68"}
+
+```{=html}
+<div class="cyan-stage title-stage">
+  <div class="ground"></div>
+  <img src="static_images/cyan_full.jpg" style="width:1250px;left:520px;top:0px">
+  <div class="t-kicker" style="top:376px">HAI101 · LSE · 6 November 2026</div>
+  <h1 class="t-title thanks" style="top:404px">Thank you</h1>
+  <div class="t-by" style="top:534px">maxnoichl.eu/talk</div>
+</div>
+```
+
+
+
+<!-- # 
+
+![](static_images//end_owl.png){width=35% fig-align="center"}
+
+<div style="text-align: center;">
+<h1>Thank you!</h1>
+</div> -->
+
+# Literature

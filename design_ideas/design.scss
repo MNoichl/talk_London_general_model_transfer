@@ -1,0 +1,297 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300..700;1,300..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+$paper: #f3f3f3;      // matches the paper tone of the engraving itself
+$ivory: #eee6d6;
+$ink: #191919;
+$grey: #6e6e6e;
+$accent: #8e1b14;     // oxblood, a deeper take on the old #ab0b00
+$prussian: #1d3c63;
+
+$body-bg: $paper !default;
+$body-color: $ink !default;
+$link-color: $accent !default;
+$selection-bg: $accent !default;
+$font-family-sans-serif: "Newsreader", Georgia, serif !default;
+$presentation-heading-font: "Newsreader", Georgia, serif !default;
+$presentation-heading-color: $ink !default;
+
+/*-- scss:rules --*/
+
+// ---------------------------------------------------------------------------
+// Stage: every design is laid out on a fixed 1400 x 1000 canvas
+// ---------------------------------------------------------------------------
+.reveal .slides > section.idea {
+  padding: 0 !important;
+  top: 0 !important;
+  height: 1000px;
+}
+
+.reveal .stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1400px;
+  height: 1000px;
+  overflow: visible;
+  font-family: "Newsreader", Georgia, serif;
+  font-optical-sizing: auto;
+  color: $ink;
+  text-align: left;
+  line-height: 1.25;
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  img {
+    position: absolute;
+    display: block;
+    max-width: none !important;
+    max-height: none !important;
+    border: 0;
+    box-shadow: none;
+  }
+  .abs { position: absolute; }
+  .clip { position: absolute; overflow: hidden; }
+  .center { text-align: center; }
+  .right { text-align: right; }
+  .accent { color: $accent; }
+}
+
+// Small print: Jost, spaced capitals
+.reveal .stage .lab {
+  position: absolute;
+  font-family: "Jost", sans-serif;
+  font-weight: 450;
+  font-size: 16px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.reveal .stage .jost { font-family: "Jost", sans-serif; }
+
+// Display type: Newsreader
+.reveal .stage .ttl {
+  position: absolute;
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.005em;
+}
+
+.reveal .stage .by {
+  position: absolute;
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1.35;
+}
+
+.reveal .stage .rule {
+  position: absolute;
+  height: 0;
+  border-top: 1.5px solid $ink;
+}
+
+// thick-thin rule, as under a book headpiece
+.reveal .stage .rule2 {
+  position: absolute;
+  height: 9px;
+  border-top: 3px solid $ink;
+  border-bottom: 1px solid $ink;
+}
+
+// rule — ornament — rule
+.reveal .stage .orn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 26px;
+  color: $accent;
+  &::before, &::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid $ink;
+  }
+}
+
+// Idea label in the corner (delete for the real deck)
+.reveal .stage .tag {
+  position: absolute;
+  right: 18px;
+  bottom: 12px;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+  background: rgba(243, 243, 243, 0.85);
+  padding: 3px 8px;
+  z-index: 50;
+}
+.reveal .stage .tag.dark { color: rgba(255,255,255,.6); background: rgba(0,0,0,.25); }
+
+// ---------------------------------------------------------------------------
+// Recurring devices
+// ---------------------------------------------------------------------------
+
+// Plate with a printer's plate mark around it
+.reveal .stage .plate {
+  position: absolute;
+  overflow: hidden;
+  outline: 1px solid rgba(0, 0, 0, 0.35);
+  outline-offset: 16px;
+}
+.reveal .stage .plate.mark {
+  box-shadow: 0 0 0 16px $paper, 0 0 0 17px rgba(0,0,0,.18), 2px 3px 0 17px rgba(0,0,0,.05);
+  outline: 1px solid $ink;
+  outline-offset: 0;
+}
+
+// Light map-style label: the same white tags the map uses for its own names
+.reveal .stage .maplabel {
+  position: absolute;
+  background: #fff;
+  border: 1px solid $ink;
+  padding: 10px 18px 12px;
+  line-height: 1.1;
+}
+
+// Medallion crop
+.reveal .stage .medal {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px $paper, 0 0 0 11.5px $ink, 0 0 0 17px $paper, 0 0 0 18px $ink;
+}
+
+// Cartouche: double rule around a soft paper ground
+.reveal .stage .cartouche {
+  position: absolute;
+  background: rgba(243, 243, 243, 0.94);
+  border: 1.5px solid $ink;
+  outline: 1px solid $ink;
+  outline-offset: 7px;
+  border-radius: 999px;
+  text-align: center;
+}
+
+// Book page: running head and folio
+.reveal .stage .runhead {
+  position: absolute;
+  left: 110px; right: 110px; top: 58px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $grey;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $ink;
+}
+.reveal .stage .folio {
+  position: absolute;
+  left: 0; right: 0; bottom: 46px;
+  text-align: center;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  color: $grey;
+}
+
+// Asterisk bullets carried over from the current deck
+.reveal .stage ul.ast {
+  list-style: none;
+  li {
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 18px;
+    text-indent: 0;
+    &::before {
+      content: "*";
+      position: absolute;
+      left: 0;
+      top: 0.05em;
+      color: $accent;
+      font-family: "Jost", sans-serif;
+      font-size: 1.5em;
+      line-height: 1;
+    }
+  }
+}
+
+.reveal .stage .cap {
+  position: absolute;
+  font-size: 19px;
+  line-height: 1.35;
+  color: #333;
+  .n {
+    font-family: "Jost", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $ink;
+    margin-right: 8px;
+  }
+}
+
+// Table of contents with dotted leaders
+.reveal .stage .toc {
+  position: absolute;
+  .row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  .num { width: 64px; color: $accent; font-family: "Jost", sans-serif; font-size: 22px; letter-spacing: .1em; }
+  .lead { flex: 1; border-bottom: 2px dotted rgba(0,0,0,.45); transform: translateY(-8px); }
+  .what { font-family: "Jost", sans-serif; font-size: 17px; letter-spacing: .2em; text-transform: uppercase; color: $grey; }
+  .sub { padding-left: 78px; font-style: italic; font-size: 25px; color: #3a3a3a; margin: -2px 0 22px; line-height: 1.45; }
+}
+
+// ---------------------------------------------------------------------------
+// Cyanotype family
+//   on blue:  white type, vermilion accent (red pencil on a blueprint)
+//   on paper: Prussian-blue ink, oxblood accent
+// ---------------------------------------------------------------------------
+$cyan: #183a68;
+$cyan-deep: #112c52;
+$vermilion: #ef6a4a;
+$chalk: #f3f1ea;
+$cream: #f0eadf;
+
+.reveal .stage {
+  .ground { position: absolute; left: -400px; top: -400px; width: 2200px; height: 1800px; }
+  .verm { color: $vermilion; }
+  .chalk { color: $chalk; }
+  .prus { color: $cyan; }
+  .orn.light { color: $vermilion; &::before, &::after { border-color: rgba(243, 241, 234, .75); } }
+  .orn.prus { color: $accent; &::before, &::after { border-color: $cyan; } }
+  .rule.verm { border-top: 2px solid $vermilion; }
+  .rule.prus { border-color: $cyan; }
+  .cartouche.light {
+    background: rgba(24, 58, 104, .9);
+    border-color: $chalk;
+    outline-color: $chalk;
+    color: $chalk;
+  }
+  .medal.prus { box-shadow: 0 0 0 10px $cream, 0 0 0 11.5px $cyan, 0 0 0 17px $cream, 0 0 0 18px $cyan; }
+  ul.ast.verm li::before { color: $vermilion; }
+  .hl { color: $vermilion; }
+  .runhead.light { color: rgba(243, 241, 234, .7); border-bottom-color: rgba(243, 241, 234, .7); }
+  .folio.light { color: rgba(243, 241, 234, .6); }
+}
+
+// soft halo of blue behind type set over the cyanotype
+.reveal .stage .halo { text-shadow: 0 0 5px #183a68, 0 0 12px #183a68, 0 0 22px #183a68, 0 0 34px rgba(24,58,104,.8); }
+
+// feather the cyanotype's edges so its uneven exposure never shows a seam against the flat blue
+.reveal .stage img[src$="cyan_full.jpg"] {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent), linear-gradient(to bottom, transparent, #000 4%, #000 96%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent), linear-gradient(to bottom, transparent, #000 4%, #000 96%, transparent);
+  mask-composite: intersect;
+}

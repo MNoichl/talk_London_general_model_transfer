@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Quarto render output (regenerate with `quarto render`)
+.quarto/
+*_files/
+/talk.html
+/design_ideas/design_ideas.html
