@@ -6,3 +6,7 @@
 *_files/
 /talk.html
 /design_ideas/design_ideas.html
+
+# Not part of this talk
+/design_ideas/
+/talkBERLIN_files/
