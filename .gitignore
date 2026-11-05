@@ -1,10 +1,11 @@
 # macOS
 .DS_Store
 
-# Quarto render output (regenerate with `quarto render`)
+# Quarto render output. The talk itself (talk.html + talk_files/) is committed:
+# the repository is served as a web page via GitHub Pages.
 .quarto/
 *_files/
-/talk.html
+!/talk_files/
 /design_ideas/design_ideas.html
 
 # Not part of this talk
