@@ -599,7 +599,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 <div class="image-container">
 <p><img data-src="images/field_homes.png" class="remove_background" style="width:75.0%"></p>
 </div>
-<p><span class="leadin">Homes</span> Where models are homed (most of their papers), against what each field’s share of science would predict. <br></p>
+<p><span class="leadin">Homes</span> Distribution of models across main nodes (mean share 52 %). <br></p>
 <aside class="notes">
 <ul>
 <li>Home = the field where most of a model’s papers sit. Open circle: expected count if models were homed in proportion to the field’s share of all papers.</li>
@@ -621,12 +621,41 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
       }</style></aside>
 </section>
 
-<section id="first-results" class="title-slide slide level1 center">
-<h1>First results</h1>
+<section id="section-27" class="title-slide slide level1 center">
+<h1></h1>
+<div class="image-container">
+<p><img data-src="images/symmetry_scatter.png" class="remove_background" style="width:80.0%"></p>
+</div>
+<p><span class="leadin">Symmetry</span> How one-way a model’s flow between regions is (x), and whether its home region exports or imports it (y). <br></p>
+<aside class="notes">
+<ul>
+<li>x: how much more one-way the flow between regions is than random direction would give (observed − chance). 0 = as reciprocal as random, median 0.21.</li>
+<li>y: is the home region a net exporter (+1) or importer (−1) of the model. Median +0.16, so homes mostly export.</li>
+<li>The two go together: the more one-way the flow, the more extreme the home’s role.</li>
+<li>Upper right, home exports in one direction: Snowmelt Runoff, Stoner, Kohn–Sham, Variable Infiltration Capacity.</li>
+<li>Lower right, home imports in one direction: GARCH, Beta Regression, Fine–Gray, Panel Threshold.</li>
+<li>Far left, near-reciprocal exchange: Altman Z-score, Korteweg–de Vries, Lyapunov, Kuramoto; Lotka–Volterra, Schelling, Hodgkin–Huxley close by.</li>
+<li>Point size: OpenAlex works naming the model.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="summary-of-first-results" class="title-slide slide level1 center">
+<h1>Summary of first results</h1>
 <ul>
 <li class="fragment">Many models are local only, but a decent share travels widely.</li>
 <li class="fragment">Flow between areas tends to be asymmetrical.</li>
-<li class="fragment">There is no single center of flow-origin, models in multiple centers, but not uniformly.</li>
+<li class="fragment">There is no single center of flow-origin, models arise in multiple centers, but not uniformly.</li>
 </ul>
 </section>
 
@@ -647,7 +676,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 -->
 </section>
 
-<section id="section-27" class="title-slide slide level1 cyan-part center" data-background-color="#183a68">
+<section id="section-28" class="title-slide slide level1 cyan-part center" data-background-color="#183a68">
 <h1></h1>
 <div class="cyan-stage title-stage">
   <div class="ground"></div>

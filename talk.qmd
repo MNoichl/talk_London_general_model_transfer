@@ -417,7 +417,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 ![](images/field_homes.png){.remove_background width="75%"}
 :::
 
-[Homes]{.leadin} Where models are homed (most of their papers), against what each field's share of science would predict. <br>
+[Homes]{.leadin} Distribution of models across main nodes (mean share 52 %). <br>
 
 ::: {.notes}
 * Home = the field where most of a model's papers sit. Open circle: expected count if models were homed in proportion to the field's share of all papers.
@@ -428,15 +428,30 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 :::
 
 
+#
+::: {.image-container}
+![](images/symmetry_scatter.png){.remove_background width="80%"}
+:::
 
-# First results
+[Symmetry]{.leadin} How one-way a model's flow between regions is (x), and whether its home region exports or imports it (y). <br>
+
+::: {.notes}
+* x: how much more one-way the flow between regions is than random direction would give (observed − chance). 0 = as reciprocal as random, median 0.21.
+* y: is the home region a net exporter (+1) or importer (−1) of the model. Median +0.16, so homes mostly export.
+* The two go together: the more one-way the flow, the more extreme the home's role.
+* Upper right, home exports in one direction: Snowmelt Runoff, Stoner, Kohn–Sham, Variable Infiltration Capacity.
+* Lower right, home imports in one direction: GARCH, Beta Regression, Fine–Gray, Panel Threshold.
+* Far left, near-reciprocal exchange: Altman Z-score, Korteweg–de Vries, Lyapunov, Kuramoto; Lotka–Volterra, Schelling, Hodgkin–Huxley close by.
+* Point size: OpenAlex works naming the model.
+:::
+
+
+
+# Summary of first results
 
 * Many models are local only, but a decent share travels widely. 
 * Flow between areas tends to be asymmetrical. 
-* There is no single center of flow-origin, models in multiple centers, but not uniformly.
-
-
-
+* There is no single center of flow-origin, models arise in multiple centers, but not uniformly.
 
 
 
