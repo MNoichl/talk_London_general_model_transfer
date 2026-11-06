@@ -207,7 +207,7 @@ max-scale: 1.6
 ![](images/random_forest_logistic_regression_distribution_base_plot.png){.remove_background width="60%"}
 :::
 
-[Methods]{.leadin} Relevant for debates on machine learning in science vs. class. statistics, theory-free science. <br>@breimanStatisticalModelingTwo2001 @bzdokStatisticsMachineLearning2018 @andrewsDevilDataMachine
+[Methods]{.leadin} Relevant for debates on machine learning in science vs. classical statistics, theory-free science. <br>@breimanStatisticalModelingTwo2001 @bzdokStatisticsMachineLearning2018 @andrewsDevilDataMachine
 
 # 
 ::: {.image-container}
@@ -311,7 +311,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 * gpt-6.1 Sol with web access on high reasoning refines OA queries and checks them against common problems.
   * "SIR model" or "Susceptible–Infected–Recovered model" or "..."
 * Download 5,000 random records per model, total 5.63M abstracts.
-* Embed and project onto a basemap (qwen-embed-0.6)
+* Embed and project onto a basemap (Qwen3-Embedding-0.6B)
 
 ::: aside
 @zhangQwen3EmbeddingAdvancing2025
@@ -385,7 +385,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 ![](images/k_nearest_neighbors_model__regions.png){.remove_background width="75%"}
 :::
 
-[k-nearest neighbors]{.leadin} Aggregate SPLC by genieclust clusters between regions of the map.
+[k-nearest neighbors]{.leadin} SPLC aggregated by genieclust clusters: flow between regions of the map.
 
 <!-- umap of models -->
 
@@ -400,7 +400,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 ![](images/spread_vs_distance.png){.remove_background width="80%"}
 :::
 
-[Spread]{.leadin} How many map regions does a model cover (x), and how far apart are they (y). Many models sit high on both. <br>
+[Spread]{.leadin} How many map regions a model covers (x), and how far apart they are (y). Many models sit high on both. <br>
 
 ::: {.notes}
 * x: effective number of regions (exp entropy), median 5.6. y: mean distance between those regions, 1 = as far apart as two random regions, median 0.76.
@@ -417,7 +417,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 ![](images/field_homes.png){.remove_background width="75%"}
 :::
 
-[Homes]{.leadin} Distribution of models across main nodes (mean share 52 %). <br>
+[Homes]{.leadin} Distribution of models across main nodes (mean share 52%). <br>
 
 ::: {.notes}
 * Home = the field where most of a model's papers sit. Open circle: expected count if models were homed in proportion to the field's share of all papers.
@@ -450,13 +450,13 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 # Summary of first results
 
 * Many models are local only, but a decent share travels widely. 
+* There is no single centre of model origin: models arise in several centres, but not uniformly.
 * Flow between areas tends to be asymmetrical. 
-* There is no single center of flow-origin, models arise in multiple centers, but not uniformly.
 
 
 
 # Some qualifications & further work
-* OpenAlex is not perfect
+* OpenAlex is not perfect.
 * We're limited to sources that include abstracts (recency bias) and citations.
 * Undersampling of citations.
 * Expert review.

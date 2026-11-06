@@ -324,7 +324,7 @@
 <div class="image-container">
 <p><img data-src="images/random_forest_logistic_regression_distribution_base_plot.png" class="remove_background" style="width:60.0%"></p>
 </div>
-<p><span class="leadin">Methods</span> Relevant for debates on machine learning in science vs.&nbsp;class. statistics, theory-free science. <br><span class="citation" data-cites="breimanStatisticalModelingTwo2001">Breiman (<a href="#/literature" role="doc-biblioref" onclick="">2001</a>)</span> <span class="citation" data-cites="bzdokStatisticsMachineLearning2018">Bzdok et al. (<a href="#/literature" role="doc-biblioref" onclick="">2018</a>)</span> <span class="citation" data-cites="andrewsDevilDataMachine">Andrews (<a href="#/literature" role="doc-biblioref" onclick="">2023</a>)</span></p>
+<p><span class="leadin">Methods</span> Relevant for debates on machine learning in science vs.&nbsp;classical statistics, theory-free science. <br><span class="citation" data-cites="breimanStatisticalModelingTwo2001">Breiman (<a href="#/literature" role="doc-biblioref" onclick="">2001</a>)</span> <span class="citation" data-cites="bzdokStatisticsMachineLearning2018">Bzdok et al. (<a href="#/literature" role="doc-biblioref" onclick="">2018</a>)</span> <span class="citation" data-cites="andrewsDevilDataMachine">Andrews (<a href="#/literature" role="doc-biblioref" onclick="">2023</a>)</span></p>
 </section>
 
 <section id="section-13" class="title-slide slide level1 center">
@@ -490,7 +490,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 <li class="fragment">“SIR model” or “Susceptible–Infected–Recovered model” or “…”</li>
 </ul></li>
 <li class="fragment">Download 5,000 random records per model, total 5.63M abstracts.</li>
-<li class="fragment">Embed and project onto a basemap (qwen-embed-0.6)</li>
+<li class="fragment">Embed and project onto a basemap (Qwen3-Embedding-0.6B)</li>
 </ul>
 
 <!-- Examples::: -->
@@ -557,7 +557,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 <div class="image-container">
 <p><img data-src="images/k_nearest_neighbors_model__regions.png" class="remove_background" style="width:75.0%"></p>
 </div>
-<p><span class="leadin">k-nearest neighbors</span> Aggregate SPLC by genieclust clusters between regions of the map.</p>
+<p><span class="leadin">k-nearest neighbors</span> SPLC aggregated by genieclust clusters: flow between regions of the map.</p>
 <!-- umap of models -->
 </section>
 
@@ -571,7 +571,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 <div class="image-container">
 <p><img data-src="images/spread_vs_distance.png" class="remove_background" style="width:80.0%"></p>
 </div>
-<p><span class="leadin">Spread</span> How many map regions does a model cover (x), and how far apart are they (y). Many models sit high on both. <br></p>
+<p><span class="leadin">Spread</span> How many map regions a model covers (x), and how far apart they are (y). Many models sit high on both. <br></p>
 <aside class="notes">
 <ul>
 <li>x: effective number of regions (exp entropy), median 5.6. y: mean distance between those regions, 1 = as far apart as two random regions, median 0.76.</li>
@@ -599,7 +599,7 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 <div class="image-container">
 <p><img data-src="images/field_homes.png" class="remove_background" style="width:75.0%"></p>
 </div>
-<p><span class="leadin">Homes</span> Distribution of models across main nodes (mean share 52 %). <br></p>
+<p><span class="leadin">Homes</span> Distribution of models across main nodes (mean share 52%). <br></p>
 <aside class="notes">
 <ul>
 <li>Home = the field where most of a model’s papers sit. Open circle: expected count if models were homed in proportion to the field’s share of all papers.</li>
@@ -654,15 +654,15 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 <h1>Summary of first results</h1>
 <ul>
 <li class="fragment">Many models are local only, but a decent share travels widely.</li>
+<li class="fragment">There is no single centre of model origin: models arise in several centres, but not uniformly.</li>
 <li class="fragment">Flow between areas tends to be asymmetrical.</li>
-<li class="fragment">There is no single center of flow-origin, models arise in multiple centers, but not uniformly.</li>
 </ul>
 </section>
 
 <section id="some-qualifications-further-work" class="title-slide slide level1 center">
 <h1>Some qualifications &amp; further work</h1>
 <ul>
-<li class="fragment">OpenAlex is not perfect</li>
+<li class="fragment">OpenAlex is not perfect.</li>
 <li class="fragment">We’re limited to sources that include abstracts (recency bias) and citations.</li>
 <li class="fragment">Undersampling of citations.</li>
 <li class="fragment">Expert review.</li>
