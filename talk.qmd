@@ -98,12 +98,12 @@ max-scale: 1.6
 * Some examples: *Lotka–Volterra Model*, *Kuramoto Model*, *Hopfield Model*, *NK-Model*
 * Real transfer, convergence, adaptation?
 * Philosophically interesting:
-  * Scientific Creativity (and: predicting science)
   * (Computational) Reorganization of Science?
+  * Scientific Creativity (and: predicting science)
   * Pragmatism or metaphysics?
 
 ::: aside
-@humphreysExtendingOurselvesComputational2004 @knuuttilaModelTemplatesTransdisciplinary2023
+@humphreysExtendingOurselvesComputational2004 @knuuttilaModelTemplatesTransdisciplinary2023 @houkesTransferTemplatesScientific2019 @herfeldKnowledgeTransferIts2019
 :::
 
 # {.cyan-part background-color="#183a68"}
@@ -143,18 +143,17 @@ max-scale: 1.6
 ::: {.image-container}
 ![](images/basemap_cropped.png){.remove_background width="60%"}
 :::
-[OA Atlas —]{.leadin} The workflow. <br>
-@singhSciRepEvalMultiFormatBenchmark2023 @mcinnesUMAPUniformManifold2018  @debruinPyAlex2023
+[OA Atlas]{.leadin} The workflow. <br>
+@priemOpenAlexFullyopenIndex2022 @singhSciRepEvalMultiFormatBenchmark2023 @mcinnesUMAPUniformManifold2018 @debruinPyAlex2023
 
 
+# Now, why is this useful for PhilSci?
 
-
-# Now, why is this useful for PhilSci? 
 * Philosophers need to be acquainted with science:
   * Training, interviews, case studies, etc.
 * Problem: generalization, validation?
-* Answers questions of the form: "The Hopfield Model – where is it (really) a thing?"
-<!-- Switched order? -->
+  * Interactive, large-scale computational analysis.
+<!-- Pence on comp. philosophy practice here -->
 
 
 # {.cyan-part background-color="#183a68"}
@@ -176,7 +175,7 @@ max-scale: 1.6
 ![](images/hopfield_sherrington_ising_distribution_base_plot.png){.remove_background width="60%"}
 :::
 
-[Model templates —]{.leadin} Debates about model transfer in science, model templates as a structuring principle orthogonal to disciplines. <br>
+[Model templates]{.leadin} Debates about model transfer in science, model templates as a structuring principle orthogonal to disciplines. <br>
 @humphreysExtendingOurselvesComputational2004 @knuuttilaModelTemplatesTransdisciplinary2023
 
 
@@ -196,12 +195,9 @@ max-scale: 1.6
 ::: {.image-container}
 ![](images/emergence_phase_transition_distribution_base_plot.png){.remove_background width="60%"}
 :::
-[Concepts —]{.leadin} Distribution of concepts over large, interdisciplinary samples. <br>
+[Concepts]{.leadin} Distribution of concepts over large, interdisciplinary samples. <br>
 @malaterreRecipesPhilosophyScience2020 @zichertTracingDevelopmentVirtual2024
 
-::: {.notes}
-Talk only about emergence?
-:::
 
 ## {background-iframe="images/evolution_umap_with_claude_labels_darwinian_terms.html" background-interactive="true"}
 
@@ -211,21 +207,21 @@ Talk only about emergence?
 ![](images/random_forest_logistic_regression_distribution_base_plot.png){.remove_background width="60%"}
 :::
 
-[Methods —]{.leadin} Relevant for debates on machine learning in science vs. class. statistics, theory-free science. <br>@breimanStatisticalModelingTwo2001 @bzdokStatisticsMachineLearning2018 @andrewsDevilDataMachine
+[Methods]{.leadin} Relevant for debates on machine learning in science vs. class. statistics, theory-free science. <br>@breimanStatisticalModelingTwo2001 @bzdokStatisticsMachineLearning2018 @andrewsDevilDataMachine
 
 # 
 ::: {.image-container}
 ![](graphics/computational_substrate_language_small_multiples.png){.remove_background width="85%"}
 :::
 
-[Computational substrates —]{.leadin} Distribution of programming and statistical languages across scientific fields. <br>
+[Computational substrates]{.leadin} Distribution of programming and statistical languages across scientific fields. <br>
 
 # 
 ::: {.image-container}
 ![](images/hps_attention_v2.png){.remove_background width="60%"}
 :::
 
-[Attention of HPS —]{.leadin} 500k sources of the history and philosophy of science literature. <br>
+[Attention of HPS]{.leadin} 500k sources of the history and philosophy of science literature. <br>
 @weingartFindingHistoryPhilosophy2015
 
 ##
@@ -269,8 +265,8 @@ Talk only about emergence?
 
 # Identifying Models
 
-* Search on OpenAlex for model, equation, process, map, automaton.
-* Retrieve 1M records.
+* Search on OpenAlex (OA) for `model`, `equation`, `process`, `map`, `automaton`.
+* Retrieve 1M random records.
 * Use gpt-6.1 Sol to filter raw strings: "SIR model" vs. "mouse model"
 * Arrange by shortest path on substring similarity, merge in batches & filter.
 * 3,380 candidate models. Search canonical names on OA.
@@ -312,9 +308,14 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 
 
 # Researching Models
-* gpt-6.1 Sol with web access on high reasoning researches OA queries and checks them against common problems.
-* Download max 5k random records per model, total 5.63M papers.
-* Embed and project (qwen-embed-0.6)
+* gpt-6.1 Sol with web access on high reasoning refines OA queries and checks them against common problems.
+  * "SIR model" or "Susceptible–Infected–Recovered model" or "..."
+* Download 5,000 random records per model, total 5.63M abstracts.
+* Embed and project onto a basemap (qwen-embed-0.6)
+
+::: aside
+@zhangQwen3EmbeddingAdvancing2025
+:::
 
 
 <!-- Examples::: -->
@@ -323,52 +324,23 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 ![](images/kaplan_meier_survival_based_prediction_model.png){.remove_background width="75%"}
 :::
 
-[Kaplan–Meier survival model —]{.leadin} Up to 5,000 papers per model, placed on the map of all 5.63M. Concentrated in medicine and oncology.
+[Kaplan–Meier survival model]{.leadin} Model of survival processes. Concentrated in medicine & genomics.
 
 # 
 ::: {.image-container}
 ![](images/language_model.png){.remove_background width="75%"}
 :::
 
-[Language model —]{.leadin} Centred on computer science and AI, reaching into the social sciences and medicine.
+[Language model]{.leadin} Centred on computer science and AI, reaching into the social sciences and medicine.
 
 # 
 ::: {.image-container}
 ![](images/principal_component_analysis.png){.remove_background width="75%"}
 :::
 
-[Principal component analysis —]{.leadin} Spread across almost the whole map.
+[Principal component analysis]{.leadin} Basically everywhere.
 
 
-<!-- Citations -->
-
-# 
-::: {.image-container}
-![](images/k_nearest_neighbors_model__citations.png){.remove_background width="75%"}
-:::
-
-[k-nearest neighbors —]{.leadin} Citations between the papers that use the model.
-
-
-<!-- Main path analysis SPLC Search path link count -->
-
-# 
-::: {.image-container}
-![](images/k_nearest_neighbors_model__splc.png){.remove_background width="75%"}
-:::
-
-[k-nearest neighbors —]{.leadin} The 100 links with the highest search path link count (SPLC): the backbone of main path analysis. <br>
-@hummonConnectivityCitationNetwork1989 @batageljEfficientAlgorithmsCitation2003 @liuIntegratedApproachMain2012 @liuFewNotesMain2019
-
-
-<!-- # aggregate by cluster.-->
-
-# 
-::: {.image-container}
-![](images/k_nearest_neighbors_model__regions.png){.remove_background width="75%"}
-:::
-
-[k-nearest neighbors —]{.leadin} SPLC summed between regions of the map: 65% of it stays within a region.
 
 
 # {.cyan-part background-color="#183a68"}
@@ -385,19 +357,76 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 <!-- Part V content -->
 
 
+<!-- Citations -->
+
+# 
+::: {.image-container}
+![](images/k_nearest_neighbors_model__citations.png){.remove_background width="75%"}
+:::
+
+[k-nearest neighbors]{.leadin} Citations between the papers that use kNN graphs.
+
+
+<!-- Main path analysis SPLC Search path link count -->
+
+# 
+::: {.image-container}
+![](images/k_nearest_neighbors_model__splc.png){.remove_background width="75%"}
+:::
+
+[k-nearest neighbors]{.leadin} Main path analysis: the paths most travelled through the citation graph (SPLC). <br>
+@hummonConnectivityCitationNetwork1989 @batageljEfficientAlgorithmsCitation2003
+
+
+<!-- # aggregate by cluster.-->
+
+# 
+::: {.image-container}
+![](images/k_nearest_neighbors_model__regions.png){.remove_background width="75%"}
+:::
+
+[k-nearest neighbors]{.leadin} Aggregate SPLC by genieclust clusters between regions of the map.
 
 <!-- umap of models -->
 
 # {background-iframe="images/model_umap_site/model_umap.html" background-interactive="true"}
 
+<!-- Start with endemic models in physics, then show some connection at the edges of Computer science.  -->
+
+<!-- 
+# First results
+
+* Most flow is region-internal. Citations cover 30% of the models' extent.
+* 
+* External flow tends to be asymmetrical. -->
+
+
+
+# 
+::: {.image-container}
+![](images/spread_vs_distance.png){.remove_background width="80%"}
+:::
+
+[Spread]{.leadin} How many map regions does a model cover (x), and how far apart are they (y). Many models sit high on both. <br>
+
+::: {.notes}
+* x: effective number of regions (exp entropy), median 5.6. y: mean distance between those regions, 1 = as far apart as two random regions, median 0.76.
+* Broad spread mostly comes with distance: the more regions, the farther apart they tend to be.
+* Ising, Lotka–Volterra, Hodgkin–Huxley, Kuramoto and Schelling all sit above both medians.
+* Top left: few regions, but far apart (Two-Higgs-Doublet, GARCH, Doyle–Fuller–Newman).
+* Bottom: several regions close together (Friedewald, Ramberg–Osgood, Intelligent Driver Model).
+* Top right: generic statistical machinery (logistic regression, cure and accelerated failure time models).
+:::
 
 
 
 
-# Some qualifications
+
+# Some qualifications & further work
 * OpenAlex is not perfect
-* Our method right now only considers English
-* We're limited to sources that include abstracts or descriptive titles
+* We're limited to sources that include abstracts (recency bias) and citations.
+* Undersampling of citations.
+* Expert review.
 * Various UMAP issues.
 
 
