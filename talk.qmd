@@ -393,13 +393,6 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 
 <!-- Start with endemic models in physics, then show some connection at the edges of Computer science.  -->
 
-<!-- 
-# First results
-
-* Most flow is region-internal. Citations cover 30% of the models' extent.
-* 
-* External flow tends to be asymmetrical. -->
-
 
 
 # 
@@ -417,6 +410,31 @@ Embedding: Qwen3-Embedding-0.6B, title + abstract, up to 2,048 tokens, 1,024 dim
 * Bottom: several regions close together (Friedewald, Ramberg–Osgood, Intelligent Driver Model).
 * Top right: generic statistical machinery (logistic regression, cure and accelerated failure time models).
 :::
+
+
+#
+::: {.image-container}
+![](images/field_homes.png){.remove_background width="75%"}
+:::
+
+[Homes]{.leadin} Where models are homed (most of their papers), against what each field's share of science would predict. <br>
+
+::: {.notes}
+* Home = the field where most of a model's papers sit. Open circle: expected count if models were homed in proportion to the field's share of all papers.
+* Mathematics (×6.5), physics (×4.1), computer science (×3.0) and economics (×2.7) produce far more models than their size predicts.
+* Engineering is the largest home in absolute terms, but only ×1.5.
+* Medicine, the life sciences, psychology and the social sciences use many models but are home to few (×0.1–0.4).
+* So models tend to flow out of the formal and physical sciences into the rest.
+:::
+
+
+
+# First results
+
+* Many models are local only, but a decent share travels widely. 
+* Flow between areas tends to be asymmetrical. 
+* There is no single center of flow-origin, models in multiple centers, but not uniformly.
+
 
 
 
