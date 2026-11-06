@@ -7,6 +7,19 @@ format:
         navigation-mode: vertical
         include-in-header:  
             text: |
+                <meta name="description" content="Talk by Max Noichl at HAI101, LSE, 6 November 2026: mapping how 1,338 scientific models travel between fields, using 5.6 million papers from OpenAlex.">
+                <meta property="og:type" content="website">
+                <meta property="og:title" content="Uncovering the general structure of model transfer between sciences">
+                <meta property="og:description" content="Talk by Max Noichl at HAI101, LSE, 6 November 2026: mapping how 1,338 scientific models travel between fields, using 5.6 million papers from OpenAlex.">
+                <meta property="og:url" content="https://mnoichl.github.io/talk_London_general_model_transfer/talk.html">
+                <meta property="og:image" content="https://mnoichl.github.io/talk_London_general_model_transfer/static_images/social_card.jpg">
+                <meta property="og:image:width" content="1200">
+                <meta property="og:image:height" content="628">
+                <meta property="og:image:alt" content="Title slide: Uncovering the general structure of model transfer between sciences, Max Noichl, beside a cyanotype map of the sciences">
+                <meta name="twitter:card" content="summary_large_image">
+                <meta name="twitter:title" content="Uncovering the general structure of model transfer between sciences">
+                <meta name="twitter:description" content="Talk by Max Noichl at HAI101, LSE, 6 November 2026: mapping how 1,338 scientific models travel between fields, using 5.6 million papers from OpenAlex.">
+                <meta name="twitter:image" content="https://mnoichl.github.io/talk_London_general_model_transfer/static_images/social_card.jpg">
                 <style>
                 .center-xy {
                 margin: 0;
